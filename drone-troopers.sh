@@ -141,6 +141,8 @@ fi
 # Core code #
 #############
 
+mkdir -p tmp
+
 for COMPTE in `cat comptes.lst`
 do
 
@@ -201,3 +203,5 @@ fi
 rm tmp/*
 
 done
+
+rm -rf tmp
