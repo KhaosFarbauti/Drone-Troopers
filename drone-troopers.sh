@@ -117,7 +117,7 @@ for troop in $(seq 0 `expr $NB_TROOPER - 1`)
 do
 wget -q $GEST_COOKIE $URL_COMPTE/t/$troop -O tmp/$troop
 PRIX_UPGRADE=`awk '/Améliorer/ { getline;getline; print }' tmp/$troop`
-if [ $MONEY -ge $PRIX_UPGRADE ]
+if [ $MONEY -ge $PRIX_UPGRADE ] 2>/dev/null
 then
 echo "$COMPTE	upgrade du trooper $troop possible : $URL_COMPTE/t/$troop"
 fi
